@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Тимурулы Нурмухамед — Президент KBTU</title>
+<meta name="description" content="Тимурулы Нурмухамед — кандидат в президенты KBTU. Миссия: сделать студенческую жизнь комфортной, активной и полезной." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<!-- Font Awesome free icons CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-KyZXEAg3QhqLMpG8r+Knujsl5+5hb7ie1f2c/..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+  :root{
+    --bg1: #0f9d58; /* green */
+    --bg2: #00c853; /* bright green */
+    --accent: #ffffff;
+    --muted: rgba(255,255,255,0.85);
+    --card-bg: rgba(255,255,255,0.06);
+    --glass: rgba(255,255,255,0.06);
+    --shadow: 0 8px 30px rgba(0,0,0,0.15);
+    --max-width: 1100px;
+    --radius: 16px;
+    font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+  margin:0;
+  color:var(--accent);
+  background: radial-gradient(circle at top left, var(--bg1), transparent 60%),
+              radial-gradient(circle at bottom right, var(--bg2), transparent 60%),
+              linear-gradient(135deg, var(--bg1), var(--bg2));
+  background-attachment: fixed; /* чтобы фон не «прыгал» при скролле */
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.45;
+    }
+
+  .wrap{
+    max-width:var(--max-width);
+    margin:0 auto;
+    padding:28px;
+  }
+
+  header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    padding:12px 0;
+  }
+  .brand{
+    display:flex;
+    gap:12px;
+    align-items:center;
+  }
+  .logo{
+    width:64px;
+    height:64px;
+    border-radius:50%;
+    overflow:hidden;
+    flex-shrink:0;
+    background:linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0.04));
+    display:grid;
+    place-items:center;
+    border:2px solid rgba(255,255,255,0.12);
+  }
+  .logo img{width:100%;height:100%;object-fit:cover;display:block}
+  h1{font-size:20px;margin:0;font-weight:700}
+  .slogan{font-size:13px;opacity:0.95}
+
+  nav a{
+    color:var(--accent);
+    text-decoration:none;
+    margin-left:18px;
+    font-weight:600;
+    font-size:14px;
+  }
+
+  .hero{
+    display:grid;
+    grid-template-columns: 1fr 360px;
+    gap:28px;
+    align-items:center;
+    margin-top:28px;
+    padding:28px;
+    background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+    border-radius:20px;
+    box-shadow:var(--shadow);
+    backdrop-filter: blur(6px);
+  }
+  .hero .lead{
+    padding-right:12px;
+  }
+  .kicker{display:inline-block;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,0.06);font-weight:600;margin-bottom:12px}
+  h2{font-size:34px;margin:6px 0 10px;line-height:1.05}
+  p.lead{
+    font-size:16px;color:var(--muted);margin:0 0 18px;
+  }
+
+  .cta-row{display:flex;gap:12px;align-items:center}
+  .btn{
+    background:rgba(255,255,255,0.12);
+    color:var(--accent);
+    border:0;padding:12px 16px;border-radius:12px;font-weight:700;
+    cursor:pointer;text-decoration:none;
+    transition:transform .16s ease, background .16s ease;
+  }
+  .btn:hover{transform:translateY(-3px)}
+  .btn.primary{background:linear-gradient(90deg, rgba(255,255,255,0.12), rgba(255,255,255,0.06));box-shadow:0 8px 20px rgba(0,0,0,0.12)}
+
+  .avatar{
+    width:320px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    gap:10px;
+    text-align:center;
+  }
+  .avatar .photo{
+    width:200px;height:200px;border-radius:50%;overflow:hidden;border:4px solid rgba(255,255,255,0.14);box-shadow:0 10px 30px rgba(0,0,0,0.25);
+  }
+  .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+  .avatar .name{font-weight:800;font-size:18px;margin-top:6px}
+
+  /* Sections */
+  section{margin-top:36px;padding:20px;border-radius:12px}
+  .glass-card{background:var(--glass);padding:18px;border-radius:14px}
+  .grid-3{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px;
+  }
+  .card{
+    padding:18px;border-radius:12px;background:var(--card-bg);min-height:140px;
+    display:flex;flex-direction:column;gap:8px;align-items:flex-start;
+    transition:transform .22s ease, box-shadow .22s ease;
+  }
+  .card:hover{transform:translateY(-6px);box-shadow:0 10px 30px rgba(0,0,0,0.16)}
+  .card .icon{font-size:20px;background:rgba(255,255,255,0.06);padding:10px;border-radius:10px}
+
+  .kpi{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
+  .pill{background:rgba(255,255,255,0.06);padding:8px 12px;border-radius:999px;font-weight:700}
+
+  footer{margin:36px 0 90px;color:var(--muted);font-size:14px}
+
+  /* Responsive */
+  @media (max-width:1000px){
+    .hero{grid-template-columns:1fr; text-align:center}
+    .avatar{order:-1;margin-bottom:6px}
+    .grid-3{grid-template-columns:repeat(2,1fr)}
+  }
+  @media (max-width:600px){
+    .grid-3{grid-template-columns:1fr}
+    nav{display:none}
+    h2{font-size:28px}
+  }
+
+  /* reveal animations */
+  .reveal{opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease}
+  .reveal.is-visible{opacity:1; transform:none}
+  /* small UI tweaks */
+  .muted{color:var(--muted);font-size:14px}
+  .link{color:var(--accent);text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <div class="logo" aria-hidden="true">
+        <!-- Replace avatar with your logo if you want -->
+        <img src="assets/avatar.jpg" alt="Тимурулы Нурмухамед">
+      </div>
+      <div>
+        <h1>Тимурулы Нурмухамед</h1>
+        <div class="slogan">«Лучше вместе, лучше для всех!»</div>
+      </div>
+    </div>
+    <nav aria-label="Навигация">
+      <a href="#mission">Миссия</a>
+      <a href="#infrastructure">Инфраструктура</a>
+      <a href="#events">Мероприятия</a>
+      <a href="#mentorship">Развитие</a>
+      <a href="#feedback">Обратная связь</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero glass-card">
+      <div class="lead reveal">
+        <div class="kicker">Кандидат в Президенты KBTU</div>
+        <h2>Сделать студенческую жизнь комфортной, активной и полезной</h2>
+        <p class="lead">Я — Тимурулы Нурмухамед. Моя программа направлена на улучшение инфраструктуры, запуск регулярных мероприятий, поддержку наставничества и создание удобного канала обратной связи между студентами и администрацией.</p>
+        <div class="cta-row">
+          <a class="btn primary" href="#feedback">Оставить отзыв</a>
+          <a class="btn" href="#events">Программа мероприятий</a>
+        </div>
+        <div class="muted" style="margin-top:12px">✅ Молодёжный и прозрачный подход • 100% открытость планов</div>
+      </div>
+
+      <aside class="avatar reveal" aria-label="Аватар кандидата">
+        <div class="photo">
+          <!-- Заменить assets/avatar.jpg своим фото -->
+          <img src="assets/avatar.jpg" alt="Фото Тимурулы Нурмухамед">
+        </div>
+        <div class="name">Тимурулы Нурмухамед</div>
+        <div class="muted">Vote • KBTU</div>
+      </aside>
+    </section>
+
+    <section id="mission" class="reveal">
+      <div class="glass-card">
+        <h3>Моя миссия</h3>
+        <p class="muted">Сделать студенческую жизнь комфортной, активной и полезной: удобные пространства, интересные мероприятия и реальные возможности для роста.</p>
+        <div class="kpi">
+          <div class="pill">Комфорт</div>
+          <div class="pill">Активность</div>
+          <div class="pill">Развитие</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="infrastructure" class="reveal">
+      <div class="glass-card">
+        <h3>✨ Инфраструктура</h3>
+        <div class="grid-3">
+          <div class="card">
+            <div class="icon"><i class="fa-solid fa-laptop-code"></i></div>
+            <strong>Коворкинги и фуд-корты</strong>
+            <div class="muted">Комфортные рабочие зоны для учебы и командной работы.</div>
+          </div>
+          <div class="card">
+            <div class="icon"><i class="fa-solid fa-couch"></i></div>
+            <strong>Chill zones</strong>
+            <div class="muted">Зоны для отдыха, переговоров и неформального общения.</div>
+          </div>
+          <div class="card">
+            <div class="icon"><i class="fa-solid fa-wifi"></i></div>
+            <strong>Быстрый интернет</strong>
+            <div class="muted">Стабильный и быстрый Wi-Fi по всему кампусу.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="events" class="reveal">
+      <div class="glass-card">
+        <h3>🎉 Мероприятия</h3>
+        <div class="grid-3">
+          <div class="card">
+            <div class="icon"><i class="fa-solid fa-chalkboard-user"></i></div>
+            <strong>Интенсивы и мастер-классы</strong>
+            <div class="muted">Практические сессии от экспертов и студентов.</div>
+          </div>
+          <div class="card">
+            <div class="icon"><i class="fa-solid fa-mask-theater"></i></div>
+            <strong>Фестивали и культурные события</strong>
+            <div class="muted">Цель — вовлечь >25% студентов в культурную жизнь.</div>
+          </div>
+          <div class="card">
+            <div class="icon"><i class="fa-solid fa-gamepad"></i></div>
+            <strong>Спорт и киберспорт</strong>
+            <div class="muted">Поддержка команд: минимум 10+ команд в сезоне.</div>
+          </div>
+        </div>
+        <p class="muted" style="margin-top:12px">Мы будем отслеживать KPI: посещаемость, вовлечённость и отзывы для объективной оценки результатов.</p>
+      </div>
+    </section>
+
+    <section id="mentorship" class="reveal">
+      <div class="glass-card">
+        <h3>💡 Развитие и наставничество</h3>
+        <div class="grid-3">
+          <div class="card">
+            <div class="icon"><i class="fa-solid fa-hands-helping"></i></div>
+            <strong>Наставничество</strong>
+            <div class="muted">Программы для новичков и старшекурсников.</div>
+          </div>
+          <div class="card">
+            <div class="icon"><i class="fa-solid fa-users-gear"></i></div>
+            <strong>Поддержка клубов</strong>
+            <div class="muted">Помощь в организации, ресурсы и продвижение.</div>
+          </div>
+          <div class="card">
+            <div class="icon"><i class="fa-solid fa-briefcase"></i></div>
+            <strong>Профессиональный рост</strong>
+            <div class="muted">Стажировки, практические проекты и карьерные воркшопы.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="feedback" class="reveal">
+      <div class="glass-card">
+        <h3>📣 Обратная связь</h3>
+        <p class="muted">Анонимные жалобы и предложения, опросы и регулярное общение с администрацией. Удобные каналы обратной связи.</p>
+        <p style="margin-top:12px"><strong>Как связаться:</strong></p>
+        <ul class="muted">
+            <li>Email: <a class="link" href="mailto:timuruly@kbtu.kz">timuruly@example.com</a></li>
+            <li>Telegram: <a class="link" href="https://t.me/WhiteHord" target="_blank" rel="noopener noreferrer">@your_username</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="reveal">
+      <div class="glass-card" style="display:flex;flex-direction:column;gap:12px;align-items:center">
+        <h3>Vote Тимурулы Нурмухамед!</h3>
+        <p class="muted" style="text-align:center">«Лучше вместе, лучше для всех!» — поддержите программу, если разделяете ценности комфорта, активности и развития.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:8px">
+          <a class="btn primary" href="#feedback">Поддержать</a>
+          <a class="btn" href="https://t.me/WhiteHord" target="_blank" rel="noopener">Связаться</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="reveal">
+      <div class="muted">© <span id="year"></span> Тимурулы Нурмухамед — KBTU • Слоган: «Лучше вместе, лучше для всех!»</div>
+    </footer>
+  </main>
+</div>
+
+<script>
+  // Replace current year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Reveal on scroll (IntersectionObserver)
+  (function(){
+    const observer = new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('is-visible');
+        }
+      });
+    }, {threshold: 0.12});
+
+    document.querySelectorAll('.reveal').forEach(el=>{
+      observer.observe(el);
+    });
+  })();
+
+  // Smooth in-page anchor navigation
+  (function(){
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', function(e){
+        const target = document.querySelector(this.getAttribute('href'));
+        if(target){
+          e.preventDefault();
+          target.scrollIntoView({behavior:'smooth', block:'start'});
+          history.replaceState(null,null,this.getAttribute('href'));
+        }
+      });
+    });
+  })();
+</script>
+</body>
+</html>
